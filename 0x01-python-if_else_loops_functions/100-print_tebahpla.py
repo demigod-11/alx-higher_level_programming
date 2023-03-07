@@ -1,10 +1,6 @@
 #!/usr/bin/python3
-import random
-number = random.randint(-10, 10)
-
-if number > 0:
-    print("is positive")
-elif number < 0:
-    print("is negative")
-else:
-    print("is zero")
+for i in range(ord('z'), ord('a')-1, -1):
+    letter = chr(i)
+    if (i - ord('a')) % 2 == 0:
+        letter = letter.upper()
+    print("{:s}".format(letter), end="")
