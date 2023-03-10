@@ -8,4 +8,4 @@ if len(argv) > 1:
             continue
         print("{:d}: {}".format(i, j))
 else:
-    print("0 arguments.")
+    print("{} arguments.".format(len(argv) - 1))
