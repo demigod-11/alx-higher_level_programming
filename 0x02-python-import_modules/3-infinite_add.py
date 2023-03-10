@@ -1,5 +1,8 @@
-if __name__ == '__main__':
-    import sys
-    print(f"Arguments count: {len(sys.argv)}")
-    for i, arg in enumerate(sys.argv):
-        print(f"Argument {i:>6}: {arg}")
+#!/usr/bin/python3
+import sys
+summation = 0
+for i, j in enumerate(sys.argv):
+    if i == 0:
+        continue
+    summation += int(j)
+print(summation)
