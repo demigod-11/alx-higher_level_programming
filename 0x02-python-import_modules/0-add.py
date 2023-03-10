@@ -3,4 +3,5 @@ import add
 
 a = 1
 b = 2
-print("{} + {} = {} value>".format(a, b, add(a, b))):
+c = add(a, b)
+print("{} + {} = {} value>".format(a, b, c)):
