@@ -7,5 +7,7 @@ if argc < 2:
 else:
     x = 'argument' if argc == 2 else 'arguments'
     print("{} {}:".format(argc - 1, x))
-    for i, j in enumerate(argv)
+    for i, j in enumerate(argv):
+        if i == 0:
+            continue
         print("{}: {}".format(i, j))
