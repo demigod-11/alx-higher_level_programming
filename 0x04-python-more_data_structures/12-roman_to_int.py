@@ -1,32 +1,23 @@
 #!/usr/bin/python3
-def roman_value(prmCharacter):
-    roman_list = {'I':1, 'V':5, 'X':10,
-            'L':50, 'C':100, 'D':500, 'M':1000}
-    for key, value in roman_list.items():
-        if (prmCharacter is key):
-            return value
-    return None
-
-
-def next_value(prmString, prmIndex):
-    length = len(prmString)
-    if prmIndex + 1 < length:
-        return roman_value(prmString[prmIndex + 1])
-    else:
-        return None
-
-
 def roman_to_int(roman_string):
-    result = 0
+    if not isinstance(roman_string, str) or roman_string is None:
+        return 0
 
-    if (not roman_string or not isinstance(roman_string, str)):
-        return result
+    roman_to_int_dict = {'I': 1, 'V': 5, 'X': 10, 'L': 50, 'C': 100, 'D': 500, 'M': 1000}
+    prev_value = 0
+    total_value = 0
 
-    for idx, char in enumerate(roman_string):
-        current_value = roman_value(char)
-        value = next_value(roman_string, idx)
-        if value is None or current_value >= value:
-            result += current_value
+    for c in roman_string:
+        curr_value = roman_to_int_dict.get(c, 0)
+
+        if curr_value == 0:
+            return 0  # Invalid Roman numeral
+
+        if curr_value > prev_value:
+            total_value += curr_value - 2 * prev_value
         else:
-            result += (value - current_value)
-    return result
+            total_value += curr_value
+
+        prev_value = curr_value
+
+    return total_value
