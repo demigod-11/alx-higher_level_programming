@@ -28,5 +28,5 @@ def roman_to_int(roman_string):
         if value is None or current_value >= value:
             result += current_value
         else:
-            result += (value - current_alue)
+            result += (value - current_value)
     return result
