@@ -39,11 +39,13 @@ class Square:
                 Value (int)
             Return: None
         """
-        if type(value) != int:
+        if type(value) is int:
+            if value >= 0:
+                self.__size = value
+            else:
+                raise ValueError("size must be >= 0")
+        else:
             raise TypeError("size must be an integer")
-        elif value < 0:
-            raise ValueError("size must be >= 0")
-        self.__size: int = value
 
     @property
     def position(self):
