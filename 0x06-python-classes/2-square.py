@@ -18,7 +18,7 @@ class Square:
                  size : class attribute (private)
             Return: None
         """
-        self.__size:int = size
+        self.__size: int = size
 
         if not isinstance(self.__size, int):
             raise TypeError("size must be an integer")
