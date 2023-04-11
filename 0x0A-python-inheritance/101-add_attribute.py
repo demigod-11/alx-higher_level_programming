@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-    add_attribute module 
+    add_attribute module
 """
 
 
