@@ -2,6 +2,8 @@
 """
     log parsing
 """
+
+
 import sys
 
 
@@ -11,6 +13,7 @@ def print_info():
     for scode, codetimes in sorted(status_codes.items()):
         if codetimes > 0:
             print('{}: {:d}'.format(scode, codetimes))
+
 
 status_codes = {
     '200': 0,
@@ -38,12 +41,12 @@ try:
 
             if str(status) in status_codes.keys():
                 status_codes[str(status)] += 1
-        except:
+        except Exception as e:
             pass
 
         try:
             file_size += int(pieces[-1])
-        except:
+        except Exception as e:
             pass
 
         lc += 1

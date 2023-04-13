@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" 
+"""
     Function that appends to a text file
 """
 
